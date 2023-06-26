@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://e1ojfhy0rtko"]
+[gd_scene load_steps=9 format=3 uid="uid://e1ojfhy0rtko"]
 
 [ext_resource type="Script" path="res://World.gd" id="1_j621w"]
 [ext_resource type="PackedScene" uid="uid://cu2uud2aol6bg" path="res://player.tscn" id="2_kpg72"]
 [ext_resource type="PackedScene" uid="uid://54cjqeb247hb" path="res://solarpanel.tscn" id="3_35c2f"]
 [ext_resource type="PackedScene" uid="uid://brf57ptin42nh" path="res://environment.tscn" id="3_xdnbt"]
+[ext_resource type="PackedScene" uid="uid://c3fpk57mw5m0t" path="res://Phobos_1_1000.glb" id="5_bdf8g"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eboag"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -14,14 +15,22 @@ sky_material = SubResource("ProceduralSkyMaterial_eboag")
 
 [sub_resource type="Environment" id="Environment_vq8xh"]
 background_mode = 2
-background_energy_multiplier = 2.74
+background_energy_multiplier = 1.39
 sky = SubResource("Sky_ydd68")
 ambient_light_source = 2
 ambient_light_color = Color(0.164706, 0.164706, 0.164706, 1)
-ambient_light_energy = 0.83
+ambient_light_energy = 3.19
 reflected_light_source = 2
 tonemap_mode = 2
 glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.560784, 0.384314, 0.215686, 1)
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+volumetric_fog_albedo = Color(0.541176, 0.290196, 0.0784314, 1)
+volumetric_fog_emission = Color(0.741176, 0.392157, 0.105882, 1)
+volumetric_fog_length = 10.11
+adjustment_enabled = true
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_j621w")
@@ -48,4 +57,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 2, -8.70314)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.541415, 0.130697, 0.830535, -0.840756, 0.0841639, 0.534833, -6.23709e-09, -0.987844, 0.155452, 0, 32.8553, 0)
-light_energy = 3.59
+
+[node name="Phobos_1_1000" parent="." instance=ExtResource("5_bdf8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.0316, 39.8144, -77.4414)
