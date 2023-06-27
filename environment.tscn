@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://brf57ptin42nh"]
+[gd_scene load_steps=4 format=3 uid="uid://brf57ptin42nh"]
 
 [ext_resource type="PackedScene" uid="uid://c7pfay7w7yhr3" path="res://Environment.blend" id="1_ctdgw"]
+[ext_resource type="PackedScene" uid="uid://bpmhnpwpjr3u2" path="res://notmarsland.glb" id="2_akkg4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l0io5"]
 albedo_color = Color(0.258824, 0.258824, 0.258824, 1)
@@ -9,3 +10,6 @@ albedo_color = Color(0.258824, 0.258824, 0.258824, 1)
 
 [node name="Plane" parent="." index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_l0io5")
+
+[node name="notmarsland" parent="." index="1" instance=ExtResource("2_akkg4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.4507, 2, -5.59916)
