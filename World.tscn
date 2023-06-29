@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://World.gd" id="1_j621w"]
 [ext_resource type="PackedScene" uid="uid://cu2uud2aol6bg" path="res://player.tscn" id="2_kpg72"]
 [ext_resource type="PackedScene" uid="uid://54cjqeb247hb" path="res://solarpanel.tscn" id="3_35c2f"]
-[ext_resource type="PackedScene" uid="uid://brf57ptin42nh" path="res://environment.tscn" id="3_xdnbt"]
 [ext_resource type="PackedScene" uid="uid://c3fpk57mw5m0t" path="res://Phobos_1_1000.glb" id="5_bdf8g"]
+[ext_resource type="PackedScene" uid="uid://csqu3g8g6mr5l" path="res://terrain.tscn" id="5_yacoe"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eboag"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -24,11 +24,11 @@ reflected_light_source = 2
 tonemap_mode = 2
 glow_enabled = true
 fog_enabled = true
-fog_light_color = Color(0.560784, 0.384314, 0.215686, 1)
+fog_light_color = Color(0.470588, 0.219608, 0.0784314, 1)
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.01
-volumetric_fog_albedo = Color(0.541176, 0.290196, 0.0784314, 1)
-volumetric_fog_emission = Color(0.741176, 0.392157, 0.105882, 1)
+volumetric_fog_albedo = Color(0.482353, 0.239216, 0.0784314, 1)
+volumetric_fog_emission = Color(0.560784, 0.219608, 0, 1)
 volumetric_fog_length = 10.11
 adjustment_enabled = true
 
@@ -41,22 +41,24 @@ environment = SubResource("Environment_vq8xh")
 [node name="Player" parent="." instance=ExtResource("2_kpg72")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.76294, 0)
 
-[node name="Environment" parent="." instance=ExtResource("3_xdnbt")]
-
 [node name="solarpanel" parent="." instance=ExtResource("3_35c2f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 2, -1.05101)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, -0.0643682, -1.05101)
 
 [node name="solarpanel2" parent="." instance=ExtResource("3_35c2f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 2, 5.18576)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, -0.0643682, 5.18576)
 
 [node name="solarpanel3" parent="." instance=ExtResource("3_35c2f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 2, 12.0189)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, -0.0643682, 12.0189)
 
 [node name="solarpanel4" parent="." instance=ExtResource("3_35c2f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 2, -8.70314)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, -0.0643682, -8.70314)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.541415, 0.130697, 0.830535, -0.840756, 0.0841639, 0.534833, -6.23709e-09, -0.987844, 0.155452, 0, 32.8553, 0)
+light_color = Color(0.72549, 0.360784, 0.133333, 1)
 
 [node name="Phobos_1_1000" parent="." instance=ExtResource("5_bdf8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.0316, 39.8144, -77.4414)
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -71.032, 22000, -77.441)
+
+[node name="terrain" parent="." instance=ExtResource("5_yacoe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 191.5, 0)
