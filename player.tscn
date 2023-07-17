@@ -51,4 +51,4 @@ grow_horizontal = 2
 [node name="CollectionTracker" type="Label" parent="Control/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Collected Pages : 0 /10"
+text = "Parts Collected : 0 /10"

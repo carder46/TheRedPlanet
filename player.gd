@@ -31,7 +31,7 @@ func check_ray_hit():
 		if Input.is_action_just_pressed("use"):
 			ray.get_collider().queue_free()
 			pages_collected += 1
-			collection_tracker.text = "Pages :" + str(pages_collected) + "/ 10"
+			collection_tracker.text = "Parts :" + str(pages_collected) + "/ 10"
 	else:
 		interaction_notifier.visible = false
 	
