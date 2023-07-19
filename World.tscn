@@ -8,7 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://do7d5rj7ecue7" path="res://Sounds-of-Mars_first-sounds-filtered.mp3" id="6_qk28h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eboag"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_top_color = Color(0.576471, 0.301961, 0.109804, 1)
+sky_horizon_color = Color(0.396078, 0.219608, 0.0313726, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
 [sub_resource type="Sky" id="Sky_ydd68"]
@@ -24,12 +25,14 @@ ambient_light_energy = 3.19
 reflected_light_source = 2
 tonemap_mode = 2
 glow_enabled = true
+fog_enabled = true
 fog_light_color = Color(0.470588, 0.219608, 0.0784314, 1)
+fog_sky_affect = 0.0
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.01
+volumetric_fog_density = 0.0205
 volumetric_fog_albedo = Color(0.482353, 0.239216, 0.0784314, 1)
 volumetric_fog_emission = Color(0.560784, 0.219608, 0, 1)
-volumetric_fog_length = 10.11
+volumetric_fog_length = 74.78
 adjustment_enabled = true
 
 [node name="World" type="Node3D"]
@@ -58,7 +61,7 @@ transform = Transform3D(0.541415, 0.130697, 0.830535, -0.840756, 0.0841639, 0.53
 light_color = Color(0.72549, 0.360784, 0.133333, 1)
 
 [node name="Phobos_1_1000" parent="." instance=ExtResource("5_bdf8g")]
-transform = Transform3D(5, 0, 0, 0, 2.44714, -4.36022, 0, 4.36022, 2.44714, 0, 253.218, 0)
+transform = Transform3D(4.50095, -1.06572, 1.89887, 2.17749, 2.20289, -3.92502, 4.44089e-15, 4.36022, 2.44714, 0, 1465.81, -550.028)
 
 [node name="terrain" parent="." instance=ExtResource("5_yacoe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 191.5, 0)
