@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://daqfvpts0ltdu"
+path="res://.godot/imported/yt5s.io - NASA Spaceship Ambience - Real NASA Radio Chatter (128 kbps).mp3-0b0ed82821ab4abe5d625ff42101ebb6.mp3str"
+
+[deps]
+
+source_file="res://yt5s.io - NASA Spaceship Ambience - Real NASA Radio Chatter (128 kbps).mp3"
+dest_files=["res://.godot/imported/yt5s.io - NASA Spaceship Ambience - Real NASA Radio Chatter (128 kbps).mp3-0b0ed82821ab4abe5d625ff42101ebb6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
