@@ -1,44 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqf4omswl5l6r"]
+[gd_scene format=3 uid="uid://dqf4omswl5l6r"]
 
-[ext_resource type="Script" path="res://SubViewport.gd" id="1_y2fo8"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7matn"]
-bg_color = Color(0.611765, 0.305882, 0, 1)
-border_width_left = 7
-border_width_top = 7
-border_width_right = 7
-border_width_bottom = 7
-border_color = Color(0.333333, 0.333333, 0.333333, 1)
-border_blend = true
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-
-[node name="Control" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="BG" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 150.0
-offset_bottom = 150.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_7matn")
+[node name="Minimap" type="CanvasLayer"]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 285.0
-offset_bottom = 285.0
-scale = Vector2(0.5, 0.5)
+custom_minimum_size = Vector2(200, 200)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_bottom = 200.0
+grow_horizontal = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(280, 280)
-render_target_update_mode = 4
-script = ExtResource("1_y2fo8")
+transparent_bg = true
+size = Vector2i(200, 200)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+current = true
