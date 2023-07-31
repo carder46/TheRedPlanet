@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://e1ojfhy0rtko"]
+[gd_scene load_steps=15 format=3 uid="uid://e1ojfhy0rtko"]
 
 [ext_resource type="Script" path="res://World.gd" id="1_j621w"]
 [ext_resource type="PackedScene" uid="uid://cu2uud2aol6bg" path="res://player.tscn" id="2_kpg72"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d1fisix1jmtk4" path="res://MarsBase.glb" id="9_mm2t6"]
 [ext_resource type="AudioStream" uid="uid://dddacwjv1kl15" path="res://yt5s.io - Astronaut Breathing Sound Effect (128 kbps).mp3" id="9_orecr"]
 [ext_resource type="PackedScene" uid="uid://bhdhxbnwsg61r" path="res://pickup.tscn" id="10_6divm"]
+[ext_resource type="Script" path="res://mini_map.gd" id="11_4a06w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eboag"]
 sky_top_color = Color(0.576471, 0.301961, 0.109804, 1)
@@ -45,7 +46,7 @@ script = ExtResource("1_j621w")
 environment = SubResource("Environment_vq8xh")
 
 [node name="Player" parent="." instance=ExtResource("2_kpg72")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.402193, -239.634)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.402193, 6.35269)
 
 [node name="solarpanel" parent="." instance=ExtResource("3_35c2f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.099, -0.0643682, -1.05101)
@@ -102,7 +103,13 @@ grow_horizontal = 0
 
 [node name="SubViewport" type="SubViewport" parent="Minimap/SubViewportContainer"]
 transparent_bg = true
+handle_input_locally = false
 size = Vector2i(200, 200)
+render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="Minimap/SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 51.8397, 0)
+projection = 1
+current = true
+size = 30.0
+script = ExtResource("11_4a06w")
