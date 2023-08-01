@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://e1ojfhy0rtko"]
+[gd_scene load_steps=16 format=3 uid="uid://e1ojfhy0rtko"]
 
 [ext_resource type="Script" path="res://World.gd" id="1_j621w"]
 [ext_resource type="PackedScene" uid="uid://cu2uud2aol6bg" path="res://player.tscn" id="2_kpg72"]
@@ -38,6 +38,8 @@ volumetric_fog_albedo = Color(0.482353, 0.239216, 0.0784314, 1)
 volumetric_fog_emission = Color(0.560784, 0.219608, 0, 1)
 volumetric_fog_length = 74.78
 adjustment_enabled = true
+
+[sub_resource type="Theme" id="Theme_vunik"]
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_j621w")
@@ -100,6 +102,7 @@ anchor_right = 1.0
 offset_left = -200.0
 offset_bottom = 200.0
 grow_horizontal = 0
+theme = SubResource("Theme_vunik")
 
 [node name="SubViewport" type="SubViewport" parent="Minimap/SubViewportContainer"]
 transparent_bg = true
@@ -113,3 +116,5 @@ projection = 1
 current = true
 size = 30.0
 script = ExtResource("11_4a06w")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
