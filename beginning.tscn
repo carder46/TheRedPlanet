@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtv08fydtnbp1"]
+[gd_scene load_steps=3 format=3 uid="uid://dtv08fydtnbp1"]
 
-[ext_resource type="VideoStream" path="res://The-Martian-Dust-Storm-Emergency-Launch-scene-1080p-_1080p_.ogv" id="1_4kb88"]
+[ext_resource type="Script" path="res://beginning.gd" id="1_8xw0l"]
+[ext_resource type="VideoStream" path="res://ezgif.com-resize.ogv" id="1_chaow"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -9,11 +10,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8xw0l")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-layout_mode = 0
-offset_top = -454.0
-offset_right = 1920.0
-offset_bottom = 346.0
-stream = ExtResource("1_4kb88")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_chaow")
 autoplay = true
+expand = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 38.1
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
