@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cn21j2eu0nidc"]
+[gd_scene load_steps=8 format=3 uid="uid://cn21j2eu0nidc"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_80kaw"]
 [ext_resource type="Theme" uid="uid://w42hnxgo1bo3" path="res://Button.tres" id="2_2ulgt"]
 [ext_resource type="Texture2D" uid="uid://d24siwxpkffpr" path="res://marslandscape2.jpg" id="3_163ca"]
 [ext_resource type="StyleBox" uid="uid://bjmkvpuxy7r1b" path="res://MenuButtonStyle.tres" id="3_sinyv"]
+[ext_resource type="Texture2D" uid="uid://df05neiewdhmr" path="res://planetmarspng.png" id="5_a3l8f"]
+[ext_resource type="AudioStream" uid="uid://k5wm4w8xcos0" path="res://Cyberpunk 2077 - Soundtrack OST - Main Menu Theme 'In Game Version'.mp3" id="6_gkut5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_40qdl"]
 bg_color = Color(0.239216, 0.239216, 0.239216, 1)
@@ -32,20 +34,23 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -77.0
-offset_top = -42.0
-offset_right = 77.0
-offset_bottom = 42.0
+offset_left = -163.0
+offset_top = -95.0
+offset_right = 163.0
+offset_bottom = 395.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(163, 245)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 show_behind_parent = true
 layout_mode = 2
+size_flags_horizontal = 4
 theme = ExtResource("2_2ulgt")
 theme_override_styles/normal = ExtResource("3_sinyv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_40qdl")
@@ -81,6 +86,15 @@ offset_right = -18.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "menu made by Carter Dermody & James Stuart"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_gkut5")
+autoplay = true
+
+[node name="Planetmarspng" type="Sprite2D" parent="."]
+position = Vector2(960, 390)
+scale = Vector2(0.589458, 0.589458)
+texture = ExtResource("5_a3l8f")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
