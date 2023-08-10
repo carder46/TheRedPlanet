@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cn21j2eu0nidc"]
+[gd_scene load_steps=9 format=3 uid="uid://cn21j2eu0nidc"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_80kaw"]
 [ext_resource type="Theme" uid="uid://w42hnxgo1bo3" path="res://Button.tres" id="2_2ulgt"]
@@ -6,17 +6,21 @@
 [ext_resource type="StyleBox" uid="uid://bjmkvpuxy7r1b" path="res://MenuButtonStyle.tres" id="3_sinyv"]
 [ext_resource type="Texture2D" uid="uid://df05neiewdhmr" path="res://planetmarspng.png" id="5_a3l8f"]
 [ext_resource type="AudioStream" uid="uid://k5wm4w8xcos0" path="res://Cyberpunk 2077 - Soundtrack OST - Main Menu Theme 'In Game Version'.mp3" id="6_gkut5"]
+[ext_resource type="AudioStream" uid="uid://c8y8w3xh55r2k" path="res://click-21156.mp3" id="7_b1tg6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_40qdl"]
-bg_color = Color(0.239216, 0.239216, 0.239216, 1)
+bg_color = Color(0.65098, 0.164706, 0.0705882, 1)
 border_width_left = 100
 border_width_right = 100
 border_width_bottom = 10
-border_color = Color(0.239216, 0.239216, 0.239216, 1)
+border_color = Color(0.803922, 0.223529, 0.109804, 1)
+border_blend = true
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+shadow_color = Color(0.658824, 0.176471, 0.0862745, 1)
+shadow_size = 10
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -81,14 +85,16 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -381.0
-offset_top = -26.0
+offset_top = -44.0
 offset_right = -18.0
+offset_bottom = -18.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "menu made by Carter Dermody & James Stuart"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_gkut5")
+volume_db = 10.0
 autoplay = true
 
 [node name="Planetmarspng" type="Sprite2D" parent="."]
@@ -96,5 +102,11 @@ position = Vector2(960, 390)
 scale = Vector2(0.589458, 0.589458)
 texture = ExtResource("5_a3l8f")
 
+[node name="HoverSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_b1tg6")
+volume_db = 20.0
+
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

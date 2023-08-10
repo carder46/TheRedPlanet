@@ -5,3 +5,12 @@ func _on_play_pressed():
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+@onready var audioS = $HoverSound
+
+func _on_play_mouse_entered():
+	audioS.play()
+
+
+func _on_quit_mouse_entered():
+	audioS.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://e1ojfhy0rtko"]
+[gd_scene load_steps=17 format=3 uid="uid://e1ojfhy0rtko"]
 
 [ext_resource type="Script" path="res://World.gd" id="1_j621w"]
 [ext_resource type="Script" path="res://player.gd" id="2_2av23"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://cq5ewtchidbhe" path="res://scene.gltf" id="8_wfq3w"]
 [ext_resource type="PackedScene" uid="uid://d1fisix1jmtk4" path="res://MarsBase.glb" id="9_mm2t6"]
 [ext_resource type="AudioStream" uid="uid://dddacwjv1kl15" path="res://yt5s.io - Astronaut Breathing Sound Effect (128 kbps).mp3" id="9_orecr"]
-[ext_resource type="Script" path="res://mini_map.gd" id="11_4a06w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eboag"]
 sky_top_color = Color(0.576471, 0.301961, 0.109804, 1)
@@ -45,8 +44,6 @@ adjustment_enabled = true
 [sub_resource type="BoxMesh" id="BoxMesh_hbvqk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u0p6a"]
-
-[sub_resource type="Theme" id="Theme_vunik"]
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_j621w")
@@ -102,7 +99,7 @@ grow_horizontal = 2
 
 [node name="CollectionTracker" type="Label" parent="Player/Control/MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 4
 text = "Parts Collected : 0 /10"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
@@ -156,30 +153,5 @@ mesh = SubResource("BoxMesh_hbvqk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup" groups=["Pickup"]]
 shape = SubResource("BoxShape3D_u0p6a")
-
-[node name="Minimap" type="CanvasLayer" parent="."]
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Minimap"]
-custom_minimum_size = Vector2(200, 200)
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -200.0
-offset_bottom = 200.0
-grow_horizontal = 0
-theme = SubResource("Theme_vunik")
-
-[node name="SubViewport" type="SubViewport" parent="Minimap/SubViewportContainer"]
-transparent_bg = true
-handle_input_locally = false
-size = Vector2i(200, 200)
-render_target_update_mode = 4
-
-[node name="Camera3D" type="Camera3D" parent="Minimap/SubViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 51.8397, 0)
-projection = 1
-current = true
-size = 30.0
-script = ExtResource("11_4a06w")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
