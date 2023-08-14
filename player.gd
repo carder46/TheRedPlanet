@@ -25,7 +25,8 @@ func _unhandled_input(event):
 		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
 
 func check_ray_hit():
-	if ray.is_colliding():
+	var collider = ray.get_collider()
+	if ray.is_colliding() and collider:
 		if ray.get_collider().is_in_group("Pickup"):
 			interaction_notifier.visible = true
 		if Input.is_action_just_pressed("use"):
@@ -41,7 +42,6 @@ func _physics_process(delta):
 	check_ray_hit()
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY

@@ -99,7 +99,7 @@ grow_horizontal = 2
 
 [node name="CollectionTracker" type="Label" parent="Player/Control/MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 text = "Parts Collected : 0 /10"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
@@ -146,12 +146,12 @@ autoplay = true
 max_distance = 4096.0
 
 [node name="Pickup" type="StaticBody3D" parent="." groups=["Pickup"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9309, 1.05494, -292.542)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9309, 1.05494, -39.6862)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Pickup" groups=["Pickup"]]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pickup"]
 mesh = SubResource("BoxMesh_hbvqk")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup" groups=["Pickup"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup"]
 shape = SubResource("BoxShape3D_u0p6a")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
