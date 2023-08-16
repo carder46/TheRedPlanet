@@ -1,7 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://e1ojfhy0rtko"]
+[gd_scene load_steps=15 format=3 uid="uid://e1ojfhy0rtko"]
 
 [ext_resource type="Script" path="res://World.gd" id="1_j621w"]
-[ext_resource type="Script" path="res://player.gd" id="2_2av23"]
+[ext_resource type="PackedScene" uid="uid://cu2uud2aol6bg" path="res://player.tscn" id="2_ttd6d"]
 [ext_resource type="PackedScene" uid="uid://54cjqeb247hb" path="res://solarpanel.tscn" id="3_35c2f"]
 [ext_resource type="PackedScene" uid="uid://c3fpk57mw5m0t" path="res://Phobos_1_1000.glb" id="5_bdf8g"]
 [ext_resource type="PackedScene" uid="uid://csqu3g8g6mr5l" path="res://terrain.tscn" id="5_yacoe"]
@@ -37,10 +37,6 @@ volumetric_fog_emission = Color(0.560784, 0.219608, 0, 1)
 volumetric_fog_length = 74.78
 adjustment_enabled = true
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bio28"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_i5m6u"]
-
 [sub_resource type="BoxMesh" id="BoxMesh_hbvqk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u0p6a"]
@@ -48,63 +44,10 @@ adjustment_enabled = true
 [node name="World" type="Node3D"]
 script = ExtResource("1_j621w")
 
+[node name="Player" parent="." instance=ExtResource("2_ttd6d")]
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vq8xh")
-
-[node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.402193, 6.35269)
-script = ExtResource("2_2av23")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_bio28")
-
-[node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56438, 0)
-
-[node name="RayCast3D" type="RayCast3D" parent="Player/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3166, -109.674, 106.492)
-target_position = Vector3(0, 0, -1.5)
-
-[node name="Control" type="Control" parent="Player"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="InteractionNotifier" type="Label" parent="Player/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Push E To Collect"
-
-[node name="MarginContainer" type="MarginContainer" parent="Player/Control"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 23.0
-grow_horizontal = 2
-
-[node name="CollectionTracker" type="Label" parent="Player/Control/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-text = "Parts Collected : 0 /10"
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_i5m6u")
 
 [node name="solarpanel" parent="." instance=ExtResource("3_35c2f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.099, -0.0643682, -1.05101)

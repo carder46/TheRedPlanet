@@ -52,8 +52,8 @@ grow_horizontal = 2
 
 [node name="CollectionTracker" type="Label" parent="Control/MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-text = "Parts Collected : 0 /10"
+size_flags_horizontal = 4
+text = "Parts Collected : 0 / 10"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
