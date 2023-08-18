@@ -28,6 +28,7 @@ ambient_light_energy = 3.19
 reflected_light_source = 2
 tonemap_mode = 2
 glow_enabled = true
+fog_enabled = true
 fog_light_color = Color(0.470588, 0.219608, 0.0784314, 1)
 fog_sky_affect = 0.0
 volumetric_fog_enabled = true
@@ -98,3 +99,6 @@ mesh = SubResource("BoxMesh_hbvqk")
 shape = SubResource("BoxShape3D_u0p6a")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.12947, -0.379065)
