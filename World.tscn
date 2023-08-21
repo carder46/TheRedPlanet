@@ -46,6 +46,7 @@ adjustment_enabled = true
 script = ExtResource("1_j621w")
 
 [node name="Player" parent="." instance=ExtResource("2_ttd6d")]
+transform = Transform3D(0.909766, 0, 0.415122, 0, 1, 0, -0.415122, 0, 0.909766, 0, 0, -270.804)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vq8xh")
@@ -67,7 +68,7 @@ transform = Transform3D(0.541415, 0.130697, 0.830535, -0.840756, 0.0841639, 0.53
 light_color = Color(0.72549, 0.360784, 0.133333, 1)
 
 [node name="Phobos_1_1000" parent="." instance=ExtResource("5_bdf8g")]
-transform = Transform3D(4.95381, -0.331856, 0.591301, 0.678058, 2.42453, -4.31994, 4.44089e-15, 4.36022, 2.44714, 0, 10910.8, -478.486)
+transform = Transform3D(4.95381, -0.331856, 0.591301, 0.678058, 2.42453, -4.31994, 4.44089e-15, 4.36022, 2.44714, 0, 616.529, -478.486)
 
 [node name="terrain" parent="." instance=ExtResource("5_yacoe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0960054, 189.226, -3.63503)
