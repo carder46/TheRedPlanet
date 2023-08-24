@@ -33,9 +33,11 @@ func check_ray_hit():
 			ray.get_collider().queue_free()
 			pages_collected += 1
 			collection_tracker.text = "Parts Collected : " + str(pages_collected) + " / 10"
+			if pages_collected == 10:
+				get_tree().change_scene_to_file("res://WinScene.tscn")
 	else:
 		interaction_notifier.visible = false
-	
+
 
 
 func _physics_process(delta):

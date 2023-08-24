@@ -44,7 +44,7 @@ adjustment_enabled = true
 script = ExtResource("1_j621w")
 
 [node name="Player" parent="." instance=ExtResource("2_ttd6d")]
-transform = Transform3D(0.909766, 0, 0.415122, 0, 1, 0, -0.415122, 0, 0.909766, 0, 0, -270.804)
+transform = Transform3D(0.909766, 0, 0.415122, 0, 1, 0, -0.415122, 0, 0.909766, 0, 0, -44.2627)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vq8xh")
@@ -95,6 +95,87 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9309, 1.05494, -39.6862)
 mesh = SubResource("BoxMesh_hbvqk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup"]
+shape = SubResource("BoxShape3D_u0p6a")
+
+[node name="Pickup2" type="StaticBody3D" parent="." groups=["Pickup"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3221, 1.05494, -39.6862)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pickup2"]
+mesh = SubResource("BoxMesh_hbvqk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup2"]
+shape = SubResource("BoxShape3D_u0p6a")
+
+[node name="Pickup3" type="StaticBody3D" parent="." groups=["Pickup"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3221, 1.05494, -32.67)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pickup3"]
+mesh = SubResource("BoxMesh_hbvqk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup3"]
+shape = SubResource("BoxShape3D_u0p6a")
+
+[node name="Pickup4" type="StaticBody3D" parent="." groups=["Pickup"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4513, 1.05494, -32.67)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pickup4"]
+mesh = SubResource("BoxMesh_hbvqk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup4"]
+shape = SubResource("BoxShape3D_u0p6a")
+
+[node name="Pickup5" type="StaticBody3D" parent="." groups=["Pickup"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8261, 1.05494, -37.0402)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pickup5"]
+mesh = SubResource("BoxMesh_hbvqk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup5"]
+shape = SubResource("BoxShape3D_u0p6a")
+
+[node name="Pickup6" type="StaticBody3D" parent="." groups=["Pickup"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3625, 1.05494, -37.0402)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pickup6"]
+mesh = SubResource("BoxMesh_hbvqk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup6"]
+shape = SubResource("BoxShape3D_u0p6a")
+
+[node name="Pickup7" type="StaticBody3D" parent="." groups=["Pickup"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3625, 1.05494, -24.8775)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pickup7"]
+mesh = SubResource("BoxMesh_hbvqk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup7"]
+shape = SubResource("BoxShape3D_u0p6a")
+
+[node name="Pickup8" type="StaticBody3D" parent="." groups=["Pickup"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4207, 1.05494, -24.8775)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pickup8"]
+mesh = SubResource("BoxMesh_hbvqk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup8"]
+shape = SubResource("BoxShape3D_u0p6a")
+
+[node name="Pickup9" type="StaticBody3D" parent="." groups=["Pickup"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.564, 1.05494, -24.8775)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pickup9"]
+mesh = SubResource("BoxMesh_hbvqk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup9"]
+shape = SubResource("BoxShape3D_u0p6a")
+
+[node name="Pickup10" type="StaticBody3D" parent="." groups=["Pickup"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.564, 1.05494, -29.5861)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pickup10"]
+mesh = SubResource("BoxMesh_hbvqk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup10"]
 shape = SubResource("BoxShape3D_u0p6a")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

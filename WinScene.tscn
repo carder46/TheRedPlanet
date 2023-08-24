@@ -1,0 +1,120 @@
+[gd_scene load_steps=9 format=3 uid="uid://ut28auhpa5lh"]
+
+[ext_resource type="Script" path="res://Menu.gd" id="1_l6wpl"]
+[ext_resource type="Theme" uid="uid://w42hnxgo1bo3" path="res://Button.tres" id="2_rn708"]
+[ext_resource type="StyleBox" uid="uid://bjmkvpuxy7r1b" path="res://MenuButtonStyle.tres" id="3_dhn2c"]
+[ext_resource type="Texture2D" uid="uid://d24siwxpkffpr" path="res://marslandscape2.jpg" id="4_nr3bs"]
+[ext_resource type="AudioStream" uid="uid://df8b1cck0dchb" path="res://Celebrate Good Times... Come on!!!.mp3" id="5_78ea8"]
+[ext_resource type="Texture2D" uid="uid://df05neiewdhmr" path="res://planetmarspng.png" id="6_0vtd7"]
+[ext_resource type="AudioStream" uid="uid://c8y8w3xh55r2k" path="res://click-21156.mp3" id="7_aovv8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_40qdl"]
+bg_color = Color(0.65098, 0.164706, 0.0705882, 1)
+border_width_left = 100
+border_width_right = 100
+border_width_bottom = 10
+border_color = Color(0.803922, 0.223529, 0.109804, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.658824, 0.176471, 0.0862745, 1)
+shadow_size = 10
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l6wpl")
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = -95.0
+offset_right = 163.0
+offset_bottom = 395.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(163, 245)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Restart" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
+show_behind_parent = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_rn708")
+theme_override_styles/normal = ExtResource("3_dhn2c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_40qdl")
+theme_override_styles/pressed = ExtResource("3_dhn2c")
+text = "Reset
+"
+
+[node name="Quit" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
+show_behind_parent = true
+layout_mode = 2
+theme = ExtResource("2_rn708")
+theme_override_styles/normal = ExtResource("3_dhn2c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_40qdl")
+theme_override_styles/pressed = ExtResource("3_dhn2c")
+text = "Quit"
+
+[node name="Marslandscape2" type="Sprite2D" parent="Menu"]
+z_index = -4096
+position = Vector2(967, 550)
+scale = Vector2(1.29641, 1.11106)
+texture = ExtResource("4_nr3bs")
+
+[node name="Label" type="Label" parent="Menu"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -381.0
+offset_top = -44.0
+offset_right = -18.0
+offset_bottom = -18.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "menu made by Carter Dermody & James Stuart"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Menu"]
+stream = ExtResource("5_78ea8")
+volume_db = 10.0
+autoplay = true
+
+[node name="Planetmarspng" type="Sprite2D" parent="Menu"]
+position = Vector2(960, 390)
+scale = Vector2(0.589458, 0.589458)
+texture = ExtResource("6_0vtd7")
+
+[node name="HoverSound" type="AudioStreamPlayer2D" parent="Menu"]
+stream = ExtResource("7_aovv8")
+volume_db = 20.0
+
+[connection signal="mouse_entered" from="Menu/MarginContainer/VBoxContainer/Restart" to="Menu" method="_on_play_mouse_entered" flags=18]
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/Restart" to="Menu" method="_on_play_pressed" flags=18]
+[connection signal="mouse_entered" from="Menu/MarginContainer/VBoxContainer/Quit" to="Menu" method="_on_quit_mouse_entered" flags=18]
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/Quit" to="Menu" method="_on_quit_pressed" flags=18]
