@@ -1,0 +1,11 @@
+Model Information:
+* title:	Scrap Metal
+* source:	https://sketchfab.com/3d-models/scrap-metal-ce3d5dd852bf404085720fd9f885573a
+* author:	Skipperino (https://sketchfab.com/skipperino)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Scrap Metal" (https://sketchfab.com/3d-models/scrap-metal-ce3d5dd852bf404085720fd9f885573a) by Skipperino (https://sketchfab.com/skipperino) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

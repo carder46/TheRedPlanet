@@ -6,6 +6,8 @@ const JUMP_VELOCITY = 10
 
 var pages_collected = 0
 
+signal pick_up_anim
+
 @onready var ray = $Camera3D/RayCast3D
 @onready var interaction_notifier = $Control/InteractionNotifier
 @onready var collection_tracker = $Control/MarginContainer/CollectionTracker
@@ -31,6 +33,7 @@ func check_ray_hit():
 			interaction_notifier.visible = true
 		if Input.is_action_just_pressed("use"):
 			ray.get_collider().queue_free()
+			pick_up_anim.emit()
 			pages_collected += 1
 			collection_tracker.text = "Parts Collected : " + str(pages_collected) + " / 10"
 			if pages_collected == 10:
