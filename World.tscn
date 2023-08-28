@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://e1ojfhy0rtko"]
+[gd_scene load_steps=14 format=3 uid="uid://e1ojfhy0rtko"]
 
 [ext_resource type="Script" path="res://World.gd" id="1_j621w"]
 [ext_resource type="PackedScene" uid="uid://cu2uud2aol6bg" path="res://player.tscn" id="2_ttd6d"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cq5ewtchidbhe" path="res://scene.gltf" id="8_wfq3w"]
 [ext_resource type="PackedScene" uid="uid://d1fisix1jmtk4" path="res://MarsBase.glb" id="9_mm2t6"]
 [ext_resource type="AudioStream" uid="uid://dddacwjv1kl15" path="res://yt5s.io - Astronaut Breathing Sound Effect (128 kbps).mp3" id="9_orecr"]
-[ext_resource type="PackedScene" uid="uid://djiosqmp7cu1o" path="res://gears.tscn" id="10_1ycgn"]
+[ext_resource type="PackedScene" uid="uid://dxyjfb3iy0mau" path="res://pickup_real.tscn" id="11_m4tsu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eboag"]
 sky_top_color = Color(0.576471, 0.301961, 0.109804, 1)
@@ -37,30 +37,50 @@ volumetric_fog_emission = Color(0.560784, 0.219608, 0, 1)
 volumetric_fog_length = 74.78
 adjustment_enabled = true
 
-[sub_resource type="BoxMesh" id="BoxMesh_hbvqk"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_u0p6a"]
-
 [node name="World" type="Node3D"]
 script = ExtResource("1_j621w")
 
 [node name="Player" parent="." instance=ExtResource("2_ttd6d")]
-transform = Transform3D(0.909766, 0, 0.415122, 0, 1, 0, -0.415122, 0, 0.909766, 0, 0, -44.2627)
+transform = Transform3D(0.909766, 0, 0.415122, 0, 1, 0, -0.415122, 0, 0.909766, 0, 0, -283.367)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vq8xh")
 
 [node name="solarpanel" parent="." instance=ExtResource("3_35c2f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.099, -0.0643682, -1.05101)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.099, -2.30957, -1.05101)
 
 [node name="solarpanel2" parent="." instance=ExtResource("3_35c2f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, -0.0643682, 5.18576)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, -2.30957, 5.18576)
 
 [node name="solarpanel3" parent="." instance=ExtResource("3_35c2f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, -0.0643682, 12.0189)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, -2.30957, 12.0189)
 
 [node name="solarpanel4" parent="." instance=ExtResource("3_35c2f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, -0.0643682, -8.70314)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, -2.30957, -8.70314)
+
+[node name="solarpanel5" parent="." instance=ExtResource("3_35c2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.8239, -2.30957, -1.05101)
+
+[node name="solarpanel6" parent="." instance=ExtResource("3_35c2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.7249, -2.30957, 5.18576)
+
+[node name="solarpanel7" parent="." instance=ExtResource("3_35c2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.7249, -2.30957, 12.0189)
+
+[node name="solarpanel8" parent="." instance=ExtResource("3_35c2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.7249, -2.30957, -8.70314)
+
+[node name="solarpanel9" parent="." instance=ExtResource("3_35c2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3359, -2.30957, -1.05101)
+
+[node name="solarpanel10" parent="." instance=ExtResource("3_35c2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.2369, -2.30957, 5.18576)
+
+[node name="solarpanel11" parent="." instance=ExtResource("3_35c2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.2369, -2.30957, 12.0189)
+
+[node name="solarpanel12" parent="." instance=ExtResource("3_35c2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.2369, -2.30957, -8.70314)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.541415, 0.130697, 0.830535, -0.840756, 0.0841639, 0.534833, -6.23709e-09, -0.987844, 0.155452, 0, 32.8553, 0)
@@ -89,102 +109,39 @@ volume_db = 10.946
 autoplay = true
 max_distance = 4096.0
 
-[node name="Pickup" type="StaticBody3D" parent="." groups=["Pickup"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9309, 1.05494, -39.6862)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Pickup"]
-mesh = SubResource("BoxMesh_hbvqk")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup"]
-shape = SubResource("BoxShape3D_u0p6a")
-
-[node name="Pickup2" type="StaticBody3D" parent="." groups=["Pickup"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3221, 1.05494, -39.6862)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Pickup2"]
-mesh = SubResource("BoxMesh_hbvqk")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup2"]
-shape = SubResource("BoxShape3D_u0p6a")
-
-[node name="Pickup3" type="StaticBody3D" parent="." groups=["Pickup"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3221, 1.05494, -32.67)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Pickup3"]
-mesh = SubResource("BoxMesh_hbvqk")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup3"]
-shape = SubResource("BoxShape3D_u0p6a")
-
-[node name="Pickup4" type="StaticBody3D" parent="." groups=["Pickup"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4513, 1.05494, -32.67)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Pickup4"]
-mesh = SubResource("BoxMesh_hbvqk")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup4"]
-shape = SubResource("BoxShape3D_u0p6a")
-
-[node name="Pickup5" type="StaticBody3D" parent="." groups=["Pickup"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8261, 1.05494, -37.0402)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Pickup5"]
-mesh = SubResource("BoxMesh_hbvqk")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup5"]
-shape = SubResource("BoxShape3D_u0p6a")
-
-[node name="Pickup6" type="StaticBody3D" parent="." groups=["Pickup"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3625, 1.05494, -37.0402)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Pickup6"]
-mesh = SubResource("BoxMesh_hbvqk")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup6"]
-shape = SubResource("BoxShape3D_u0p6a")
-
-[node name="Pickup7" type="StaticBody3D" parent="." groups=["Pickup"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3625, 1.05494, -24.8775)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Pickup7"]
-mesh = SubResource("BoxMesh_hbvqk")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup7"]
-shape = SubResource("BoxShape3D_u0p6a")
-
-[node name="Pickup8" type="StaticBody3D" parent="." groups=["Pickup"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4207, 1.05494, -24.8775)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Pickup8"]
-mesh = SubResource("BoxMesh_hbvqk")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup8"]
-shape = SubResource("BoxShape3D_u0p6a")
-
-[node name="Pickup9" type="StaticBody3D" parent="." groups=["Pickup"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.564, 1.05494, -24.8775)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Pickup9"]
-mesh = SubResource("BoxMesh_hbvqk")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup9"]
-shape = SubResource("BoxShape3D_u0p6a")
-
-[node name="Pickup10" type="StaticBody3D" parent="." groups=["Pickup"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.564, 1.05494, -29.5861)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Pickup10"]
-mesh = SubResource("BoxMesh_hbvqk")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup10"]
-shape = SubResource("BoxShape3D_u0p6a")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.12947, -0.379065)
 
-[node name="scene2" parent="." instance=ExtResource("10_1ycgn")]
-transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 0, -56)
+[node name="StaticBody3D" parent="." instance=ExtResource("11_m4tsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0789261, -1.36473, -327.394)
+
+[node name="StaticBody3D2" parent="." instance=ExtResource("11_m4tsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.62811, -1.42715, -319.573)
+
+[node name="StaticBody3D3" parent="." instance=ExtResource("11_m4tsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.7468, -0.949159, -343.532)
+
+[node name="StaticBody3D4" parent="." instance=ExtResource("11_m4tsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.5342, -0.839122, -343.532)
+
+[node name="StaticBody3D5" parent="." instance=ExtResource("11_m4tsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.5342, -1.42715, -308.526)
+
+[node name="StaticBody3D6" parent="." instance=ExtResource("11_m4tsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.6182, -1.23207, -371.448)
+
+[node name="StaticBody3D7" parent="." instance=ExtResource("11_m4tsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9006, -1.12502, -371.448)
+
+[node name="StaticBody3D8" parent="." instance=ExtResource("11_m4tsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.1087, -1.42715, -397.682)
+
+[node name="StaticBody3D9" parent="." instance=ExtResource("11_m4tsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1581, -1.13238, -397.682)
+
+[node name="StaticBody3D10" parent="." instance=ExtResource("11_m4tsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.954, 1.79006, -397.682)
 
 [connection signal="pick_up_anim" from="Player" to="." method="_on_player_pick_up_anim"]

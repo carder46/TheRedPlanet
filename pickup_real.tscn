@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxyjfb3iy0mau"]
+
+[ext_resource type="PackedScene" uid="uid://djiosqmp7cu1o" path="res://gears.tscn" id="1_40dxb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xqyim"]
+
+[node name="StaticBody3D" type="StaticBody3D" groups=["combination_of_gears"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(3.2, 0, 0, 0, 3.2, 0, 0, 0, 3.2, 0, 0, 0)
+shape = SubResource("BoxShape3D_xqyim")
+
+[node name="scene" parent="." instance=ExtResource("1_40dxb")]
+transform = Transform3D(0.00999999, 0, 0, 0, 0.00999999, 0, 0, 0, 0.00999999, 0, 0, 0)

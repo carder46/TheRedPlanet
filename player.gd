@@ -29,11 +29,10 @@ func _unhandled_input(event):
 func check_ray_hit():
 	var collider = ray.get_collider()
 	if ray.is_colliding() and collider:
-		if ray.get_collider().is_in_group("Pickup"):
+		if ray.get_collider().is_in_group("combination_of_gears"):
 			interaction_notifier.visible = true
 		if Input.is_action_just_pressed("use"):
 			ray.get_collider().queue_free()
-			pick_up_anim.emit()
 			pages_collected += 1
 			collection_tracker.text = "Parts Collected : " + str(pages_collected) + " / 10"
 			if pages_collected == 10:
@@ -63,3 +62,6 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+
+
